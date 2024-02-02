@@ -44,7 +44,7 @@ class AuthController extends Controller
             ]);
             $credentials = $request->only('email', 'password');
 
-            $myTTL = 30; //minutes
+            $myTTL = 1; //minutes
             JWTAuth::factory()->setTTL($myTTL);
             $access_token = JWTAuth::attempt($credentials);
 
@@ -86,7 +86,7 @@ class AuthController extends Controller
         try{
                 $credentials = $request->only('email', 'password');
 
-                $myTTL = 30; //minutes
+                $myTTL = 1; //minutes
                 JWTAuth::factory()->setTTL($myTTL);
 
                 if(!$token= JWTAuth::attempt($credentials)){
